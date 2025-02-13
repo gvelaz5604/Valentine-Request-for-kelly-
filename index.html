@@ -62,17 +62,14 @@
             transform: translateY(3px);
         }
 
+        /* Floating hearts everywhere */
         .floating-heart {
             position: absolute;
-            top: 10%;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 200px;
-            height: 200px;
-            background-color: #ff4d94;
-            clip-path: polygon(50% 0%, 0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%);
-            animation: pulse 2s infinite;
-            z-index: 1;
+            width: 40px;
+            height: 40px;
+            animation: heartFloat 5s infinite;
+            font-size: 2em;
+            color: #ff4d94;
         }
 
         @keyframes fadeInText {
@@ -101,18 +98,21 @@
             }
         }
 
-        @keyframes pulse {
+        @keyframes heartFloat {
             0% {
-                transform: scale(1);
-                opacity: 0.7;
+                top: 100%;
+                left: 50%;
+                opacity: 0;
             }
             50% {
-                transform: scale(1.1);
+                top: 50%;
+                left: 40%;
                 opacity: 1;
             }
             100% {
-                transform: scale(1);
-                opacity: 0.7;
+                top: 10%;
+                left: 70%;
+                opacity: 0;
             }
         }
 
@@ -128,32 +128,41 @@
     </style>
 </head>
 <body>
-    <div class="floating-heart"></div>
     <h1>Will you be my valentine, pookie?</h1>
     <div class="heart">💖💘💖</div>
-    <div class="cute-animals">
-        🧸🤍🧸 <br>
-        🐱❤️🐱
-    </div>
     
-    <div class="button-container">
-        <button class="button" id="yes-button">Yes! 💖</button>
-        <button class="button" id="no-button">No... 😢</button>
+    <!-- Replaced cats and dogs with love letter emojis -->
+    <div class="cute-animals">
+        💌🤍💌 <br>
+        💌🤍💌
     </div>
+
+    <!-- Yes button options -->
+    <div class="button-container">
+        <button class="button" id="yes-button-1">Yes! 💖</button>
+        <button class="button" id="yes-button-2">Yes! 💖</button>
+    </div>
+
+    <!-- Floating hearts -->
+    <div class="floating-heart" style="animation-delay: 0s;">💖</div>
+    <div class="floating-heart" style="animation-delay: 1s;">💘</div>
+    <div class="floating-heart" style="animation-delay: 2s;">💝</div>
+    <div class="floating-heart" style="animation-delay: 3s;">💞</div>
+    <div class="floating-heart" style="animation-delay: 4s;">❤️</div>
 
     <script>
-        // When "Yes" is clicked
-        document.getElementById("yes-button").addEventListener("click", function() {
-            alert("Yay! You're my Valentine! 💖");
+        // First "Yes" button - response: "Thank you pookie, I'm really happy that this is our first Valentine's together. I know we're far apart, but I promise you I'll bring flowers and food for you next time I see you. Te Amo poo."
+        document.getElementById("yes-button-1").addEventListener("click", function() {
+            alert("Thank you pookie, I'm really happy that this is our first Valentine's together. I know we're far apart, but I promise you I'll bring flowers and food for you next time I see you. Te Amo poo 💖");
             document.body.style.background = "linear-gradient(to bottom right, #ffccff, #ff99cc)";
-            document.body.innerHTML = "<h1>Yay! You're my Valentine! 💖</h1>";
+            document.body.innerHTML = "<h1>Thank you pookie, I'm really happy that this is our first Valentine's together. I know we're far apart, but I promise you I'll bring flowers and food for you next time I see you. Te Amo poo 💖</h1>";
         });
 
-        // When "No" is clicked
-        document.getElementById("no-button").addEventListener("click", function() {
-            alert("Oh no! I'll try again! 😢");
+        // Second "Yes" button - response: "Thank you pookie, I'm really happy that this is our first Valentine's together. I know we're far apart, but I promise you I'll bring flowers and food for you next time I see you. Te Amo poo."
+        document.getElementById("yes-button-2").addEventListener("click", function() {
+            alert("Thank you pookie, I'm really happy that this is our first Valentine's together. I know we're far apart, but I promise you I'll bring flowers and food for you next time I see you. Te Amo poo 💖");
             document.body.style.background = "linear-gradient(to bottom right, #ffccff, #ff99cc)";
-            document.body.innerHTML = "<h1>Oh no! I'll try again! 😢</h1>";
+            document.body.innerHTML = "<h1>Thank you pookie, I'm really happy that this is our first Valentine's together. I know we're far apart, but I promise you I'll bring flowers and food for you next time I see you. Te Amo poo 💖</h1>";
         });
     </script>
 </body>
