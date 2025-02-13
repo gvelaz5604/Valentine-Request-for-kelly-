@@ -31,7 +31,6 @@
 
         .heart {
             font-size: 3em;
-            animation: floatHearts 3s infinite ease-in-out;
             margin-top: 20px;
         }
 
@@ -62,14 +61,22 @@
             transform: translateY(3px);
         }
 
-        /* Floating hearts everywhere */
-        .floating-heart {
+        /* Static Hearts - beat effect */
+        .heart-icon {
             position: absolute;
-            width: 40px;
-            height: 40px;
-            animation: heartFloat 5s infinite;
-            font-size: 2em;
+            font-size: 3em;
             color: #ff4d94;
+            opacity: 0.8;
+            animation: heartbeat 1.5s ease-in-out infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2); /* Bigger for the "beat" effect */
+            }
         }
 
         @keyframes fadeInText {
@@ -83,48 +90,22 @@
             }
         }
 
-        @keyframes floatHearts {
-            0% {
-                transform: translateY(0);
-                opacity: 0.8;
-            }
-            50% {
-                transform: translateY(-20px);
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(0);
-                opacity: 0.8;
-            }
-        }
-
-        @keyframes heartFloat {
-            0% {
-                top: 100%;
-                left: 50%;
-                opacity: 0;
-            }
-            50% {
-                top: 50%;
-                left: 40%;
-                opacity: 1;
-            }
-            100% {
-                top: 10%;
-                left: 70%;
-                opacity: 0;
-            }
-        }
-
         .cute-animals {
             font-size: 2.5em;
             margin-top: 30px;
         }
 
-        .heart-icon {
-            font-size: 3em;
-            margin: 0 10px;
-        }
+        .heart-icon-1 { top: 10%; left: 5%; }
+        .heart-icon-2 { top: 20%; left: 30%; }
+        .heart-icon-3 { top: 40%; left: 50%; }
+        .heart-icon-4 { top: 60%; left: 70%; }
+        .heart-icon-5 { top: 80%; left: 20%; }
+        .heart-icon-6 { top: 50%; left: 85%; }
+        .heart-icon-7 { top: 15%; left: 70%; }
+        .heart-icon-8 { top: 75%; left: 40%; }
+        .heart-icon-9 { top: 30%; left: 90%; }
+        .heart-icon-10 { top: 90%; left: 50%; }
+        /* Add more hearts with similar unique classes if desired */
     </style>
 </head>
 <body>
@@ -143,26 +124,31 @@
         <button class="button" id="yes-button-2">Yes! 💖</button>
     </div>
 
-    <!-- Floating hearts -->
-    <div class="floating-heart" style="animation-delay: 0s;">💖</div>
-    <div class="floating-heart" style="animation-delay: 1s;">💘</div>
-    <div class="floating-heart" style="animation-delay: 2s;">💝</div>
-    <div class="floating-heart" style="animation-delay: 3s;">💞</div>
-    <div class="floating-heart" style="animation-delay: 4s;">❤️</div>
+    <!-- Static Hearts with beat effect -->
+    <div class="heart-icon heart-icon-1">💖</div>
+    <div class="heart-icon heart-icon-2">💘</div>
+    <div class="heart-icon heart-icon-3">💝</div>
+    <div class="heart-icon heart-icon-4">💞</div>
+    <div class="heart-icon heart-icon-5">❤️</div>
+    <div class="heart-icon heart-icon-6">💗</div>
+    <div class="heart-icon heart-icon-7">💖</div>
+    <div class="heart-icon heart-icon-8">💘</div>
+    <div class="heart-icon heart-icon-9">💝</div>
+    <div class="heart-icon heart-icon-10">💞</div>
 
     <script>
-        // First "Yes" button - response: "Thank you pookie, I'm really happy that this is our first Valentine's together. I know we're far apart, but I promise you I'll bring flowers and food for you next time I see you. Te Amo poo."
+        // First "Yes" button - response: "Thank you pookie, I know we're far apart but I just want to take the time to say I love you so much, I promise to bring flowers, kisses, hugs, and most importantly food lol ... but fr tho, I can't wait to see you again, I love you. - Love Gerardo"
         document.getElementById("yes-button-1").addEventListener("click", function() {
-            alert("Thank you pookie, I'm really happy that this is our first Valentine's together. I know we're far apart, but I promise you I'll bring flowers and food for you next time I see you. Te Amo poo 💖");
+            alert("Thank you pookie, I know we're far apart but I just want to take the time to say I love you so much, I promise to bring flowers, kisses, hugs, and most importantly food lol ... but fr tho, I can't wait to see you again, I love you. - Love Gerardo 💖");
             document.body.style.background = "linear-gradient(to bottom right, #ffccff, #ff99cc)";
-            document.body.innerHTML = "<h1>Thank you pookie, I'm really happy that this is our first Valentine's together. I know we're far apart, but I promise you I'll bring flowers and food for you next time I see you. Te Amo poo 💖</h1>";
+            document.body.innerHTML = "<h1>Thank you pookie, I know we're far apart but I just want to take the time to say I love you so much, I promise to bring flowers, kisses, hugs, and most importantly food lol ... but fr tho, I can't wait to see you again, I love you. - Love Gerardo 💖</h1>";
         });
 
-        // Second "Yes" button - response: "Thank you pookie, I'm really happy that this is our first Valentine's together. I know we're far apart, but I promise you I'll bring flowers and food for you next time I see you. Te Amo poo."
+        // Second "Yes" button - response: "Thank you pookie, I know we're far apart but I just want to take the time to say I love you so much, I promise to bring flowers, kisses, hugs, and most importantly food lol ... but fr tho, I can't wait to see you again, I love you. - Love Gerardo"
         document.getElementById("yes-button-2").addEventListener("click", function() {
-            alert("Thank you pookie, I'm really happy that this is our first Valentine's together. I know we're far apart, but I promise you I'll bring flowers and food for you next time I see you. Te Amo poo 💖");
+            alert("Thank you pookie, I know we're far apart but I just want to take the time to say I love you so much, I promise to bring flowers, kisses, hugs, and most importantly food lol ... but fr tho, I can't wait to see you again, I love you. - Love Gerardo 💖");
             document.body.style.background = "linear-gradient(to bottom right, #ffccff, #ff99cc)";
-            document.body.innerHTML = "<h1>Thank you pookie, I'm really happy that this is our first Valentine's together. I know we're far apart, but I promise you I'll bring flowers and food for you next time I see you. Te Amo poo 💖</h1>";
+            document.body.innerHTML = "<h1>Thank you pookie, I know we're far apart but I just want to take the time to say I love you so much, I promise to bring flowers, kisses, hugs, and most importantly food lol ... but fr tho, I can't wait to see you again, I love you. - Love Gerardo 💖</h1>";
         });
     </script>
 </body>
